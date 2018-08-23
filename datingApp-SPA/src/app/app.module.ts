@@ -1,14 +1,14 @@
 import {HttpModule} from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';  // ../../node_modules, it was before @angular
+import {FormsModule} from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { ValueComponent } from './value/value.component';
 import { NavComponent } from './nav/nav.component';
 
-import {FormsModule} from '@angular/forms';
 import { AuthService } from './_services/auth.service';
-import { HttpClientModule } from '../../node_modules/@angular/common/http';
 
 @NgModule({
    declarations: [
@@ -19,10 +19,12 @@ import { HttpClientModule } from '../../node_modules/@angular/common/http';
    imports: [
       BrowserModule,
       HttpModule,
-      FormsModule,
-      HttpClientModule
+      HttpClientModule,
+      FormsModule
    ],
-   providers: [AuthService],
+   providers: [
+       AuthService
+    ],
    bootstrap: [
       AppComponent
    ]
