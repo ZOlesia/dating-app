@@ -9,23 +9,14 @@ import { Http } from '@angular/http';
 export class HomeComponent implements OnInit {
 
   registerMode = false;
-  values: any;
+
 
   constructor(private http: Http) { }
 
-  ngOnInit() {
-    this.getValues();
-  }
+  ngOnInit() {}
 
   registerToggle() {
     this.registerMode = true;
-  }
-
-  getValues() {
-    this.http.get('https://localhost:5001/api/values').subscribe(response => {
-      console.log(response);
-      this.values = response.json();
-    });
   }
 
   cancelRegisterMode(registerMode: boolean) {
