@@ -18,7 +18,7 @@ constructor(private http: HttpClient) { }
         map((response: any) => {  // will store token localy so it easier have an access to the token when we need to get it
           const user = response; // user will hold token object which is coming from response as a key "token" and value
           if (user) {
-            localStorage.setItem('token', user.token); // .token -> this is what coming from the object from our api
+            localStorage.setItem('token', user['tokenString']); // .token -> this is what coming from the object from our api
           }
         })
       );
